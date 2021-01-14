@@ -9,14 +9,16 @@ int getOpposite(int status)
   return status == LOW ? HIGH : LOW;
 }
 
-void setup() {
+void setup()
+{
   pinMode(c_green, OUTPUT);
   pinMode(c_red1, OUTPUT);
   pinMode(c_red2, OUTPUT);
   pinMode(2, INPUT);
 }
 
-void loop() {
+void loop()
+{
   switchState = digitalRead(2);
   if (switchState == LOW)
   {
@@ -27,7 +29,7 @@ void loop() {
   else
   {
     digitalWrite(c_green, HIGH);
-    
+
     const int red1Toggled = getOpposite(red1Enabled);
     digitalWrite(c_red1, red1Enabled);
     digitalWrite(c_red2, red1Toggled);
